@@ -3,7 +3,6 @@ package com.qa.pages;
 
 import com.qa.base.Browser;
 import com.qa.utils.PropertyLoader;
-
 import java.util.Properties;
 
 public class AbstractPage {

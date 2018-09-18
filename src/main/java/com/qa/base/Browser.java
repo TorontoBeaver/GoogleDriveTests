@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -73,7 +72,7 @@ public class Browser {
 	public void rightClickAndNewFolderCreation(String newFoldersName) {
 
 		takeScreenshot();
-		new Actions(driver).moveByOffset(250, 150).contextClick().sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
+		new Actions(driver).contextClick().sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
 		takeScreenshot();
 		new Actions(driver).sendKeys(newFoldersName).perform();
 		takeScreenshot();
@@ -112,6 +111,7 @@ public class Browser {
 				"to '" + driver.findElement(targetLocator).getText() + "' (Located: " + targetLocator + ")");
 		(new Actions(driver)).dragAndDrop(element, target).perform();
 		takeScreenshot();
+		takeScreenshot();
 	}
 	public void type(By locator, String text) {
 		waitForElementVisible(locator);
@@ -127,7 +127,6 @@ public class Browser {
 		takeScreenshot();
 
 	}
-
 	public void takeScreenshot() {
 		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		try {

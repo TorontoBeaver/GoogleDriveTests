@@ -1,6 +1,5 @@
 package com.qa.pages;
 
-
 import org.openqa.selenium.By;
 
 public class HomePage extends AbstractPage {
@@ -11,8 +10,9 @@ public class HomePage extends AbstractPage {
 	private static final By GOOGLE_DRIVE_LOCATOR2 = By.xpath("//span[@data-tooltip='My Drive']");
 
 	public void newFolderCreation() {
-
 		browser.rightClickAndNewFolderCreation(prop.getProperty("newFolderName"));
+	}
+	public void dragAndDropeFile(){
 		browser.dragAndDrop(FILE_LOCATOR,NEW_FOLDER_LOCATOR);
 	}
 	public void openNewFolder(){
@@ -25,4 +25,8 @@ public class HomePage extends AbstractPage {
 		browser.openMyDrive(GOOGLE_DRIVE_LOCATOR2);
 		browser.refresh();
 	}
+	public void refreshPage(){
+		browser.refresh();
+	}
+
 }
